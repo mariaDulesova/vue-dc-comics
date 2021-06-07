@@ -4,7 +4,10 @@
             <img src="@/assets/images/dc-logo.png" alt="Logo">
             <ul>
                 <li v-for = '(link,index) in links' :key='index'>
-                    <a :href='link.url' :class='{active: link.current}'> {{ link.text }} </a>
+                    <a 
+                    :href='link.url' 
+                    :class='(activeIndex==index) ? "active" : ""'
+                    @click = 'getActiveLink(index)'> {{ link.text }} </a>
                 </li>
             </ul>
         </div>
@@ -67,22 +70,31 @@ export default {
                     url: '#shop',
                     current:false
                 }
-            ]
+            ],
+
+            activeIndex: 0,
+        }
+    },
+    methods: {
+        getActiveLink: function(i) {
+            return this.activeIndex = i;
+            
         }
     }
 }
 </script>
 
 <style scoped lang="scss">
+@import "../style/variables.scss";
 nav {
     padding: 15px 0;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-
+    
     .wrap {
         width:70%;
         margin:0 auto;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
     }
     
 }
@@ -93,16 +105,28 @@ ul {
     list-style: none;
 
     li{
-        a{
+        a {
             text-decoration: none;
             text-transform: uppercase;
-            padding: 10px;
-            color: #303030; 
+            padding: 55px 10px;
+            color: $primary-dark-gray; 
+    
         }
         .active{
-            color: #0E7CEC;
-            border-bottom: 3px solid #0E7CEC;
+            color: $primary-blue;
+            position: relative;
+
+            &::before{
+                content : "";
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                width: 50%; 
+                border-bottom: 4px solid $primary-blue;
+                transform: translateX(-50%);
+            }
             
+           
         }
     }
 }

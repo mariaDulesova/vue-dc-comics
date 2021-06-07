@@ -76,6 +76,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+@import "../style/variables.scss";
+
     section {
         position:relative;
         background-image: url('../assets/images/footer-bg.jpg');
@@ -85,14 +88,13 @@ export default {
             margin:0 auto;
         }
     }
-
     
     .section-links { 
         display:flex;
         justify-content:space-between;
         align-items: center;
 
-        .links{
+        .links {
             display:flex;
             justify-content: space-between;
             .left,
@@ -101,28 +103,26 @@ export default {
                 margin-right: 20px;
 
                 h3 {
-                    padding-top: 20px;
                     color:white;
                     text-transform:uppercase;
                 }
 
-                ul{
+                ul {
                     list-style: none;
+                    padding-bottom: 20px;
 
-                    li{
-                        padding-top: 2px;
-
-                        a{
+                    li {
+                        a {
                             color:rgb(175, 175, 175);
                             text-decoration:none;
-                            font-size: 12px;
+                            font-size: 0.8rem;
                         } 
                     }
                 }
             }
         }
 
-        img{
+        img {
             width: 500px;
         }
     }
@@ -132,7 +132,7 @@ export default {
         left:0;
         bottom:0;
         width: 100%;
-        background-color: #303030;
+        background-color: $primary-dark-gray;
         padding: 15px 0;
 
         .bottom-links{
@@ -144,7 +144,7 @@ export default {
             
                 a {
                     padding: 10px;
-                    border: 2px solid #0E7CEC;
+                    border: 2px solid $primary-blue;
                     color: white;
                     text-decoration:none;
                     text-transform: uppercase;
@@ -161,7 +161,7 @@ export default {
 
                 h3 {
                     text-transform: uppercase;
-                    color: #0E7CEC;
+                    color: $primary-blue;
                 }
 
             }
