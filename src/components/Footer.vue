@@ -1,6 +1,6 @@
 <template>
     <section> 
-        <div class="section-links">
+        <div class="section-links wrap">
             <div class= "links">
                 <div class="left">
                     <h3>DC Comics</h3>
@@ -50,7 +50,21 @@
             <img src="../assets/images/dc-logo-bg.png" alt="">
         
         </div>
-        <div class="section-sign"></div>
+        <div class="section-sign">
+            <div class="bottom-links wrap">
+                <div class="button">
+                    <a href="#">Sign-Up Now!</a>
+                </div>
+                <div class="socials">
+                    <h3>Follow Us</h3>
+                    <img src="../assets/images/footer-facebook.png" alt="Facebook">
+                    <img src="../assets/images/footer-twitter.png" alt="Twitter">
+                    <img src="../assets/images/footer-youtube.png" alt="Youtube">
+                    <img src="../assets/images/footer-pinterest.png" alt="Pinterest">
+                    <img src="../assets/images/footer-periscope.png" alt="Periscope">
+                </div>
+            </div>
+        </div>
 
     </section> 
 </template>
@@ -63,46 +77,98 @@ export default {
 
 <style lang="scss" scoped>
     section {
+        position:relative;
+        background-image: url('../assets/images/footer-bg.jpg');
 
-        background-image: url('../assets/images/footer-bg.jpg')
+        .wrap {
+            width:70%;
+            margin:0 auto;
+        }
     }
-    .section-links {
-        width:70%;
-        margin:0 auto;
+
+    
+    .section-links { 
         display:flex;
         justify-content:space-between;
+        align-items: center;
 
         .links{
             display:flex;
             justify-content: space-between;
-
             .left,
             .middle,
             .right {
                 margin-right: 20px;
-                
+
                 h3 {
                     padding-top: 20px;
                     color:white;
                     text-transform:uppercase;
                 }
+
+                ul{
+                    list-style: none;
+
+                    li{
+                        padding-top: 2px;
+
+                        a{
+                            color:rgb(175, 175, 175);
+                            text-decoration:none;
+                            font-size: 12px;
+                        } 
+                    }
+                }
+            }
+        }
+
+        img{
+            width: 500px;
+        }
+    }
+    
+    .section-sign {
+        position:absolute;
+        left:0;
+        bottom:0;
+        width: 100%;
+        background-color: #303030;
+        padding: 15px 0;
+
+        .bottom-links{
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+
+            .button {
+            
+                a {
+                    padding: 10px;
+                    border: 2px solid #0E7CEC;
+                    color: white;
+                    text-decoration:none;
+                    text-transform: uppercase;
+                }
+            }
+
+            .socials{
+                display:flex;
+                align-items: center;
+            
+                img,h3{
+                    padding: 10px;
+                }
+
+                h3 {
+                    text-transform: uppercase;
+                    color: #0E7CEC;
+                }
+
             }
         }
     }
-  
 
-    ul{
-        list-style: none;
+    
 
-        li{
-            padding-top: 2px;
-
-           a{
-            color:rgb(175, 175, 175);
-            text-decoration:none;
-            font-size: 12px;
-           } 
-        }
-    }
 
 </style>

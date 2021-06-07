@@ -1,12 +1,13 @@
 <template>
     <nav>
-        <img src="@/assets/images/dc-logo.png" alt="Logo">
-        <ul>
-            <li v-for = '(link,index) in links' :key='index'>
-                <a :href='link.url' :class='{active: link.current}'> {{ link.text }} </a>
-            </li>
-        </ul>
-
+        <div class="wrap">
+            <img src="@/assets/images/dc-logo.png" alt="Logo">
+            <ul>
+                <li v-for = '(link,index) in links' :key='index'>
+                    <a :href='link.url' :class='{active: link.current}'> {{ link.text }} </a>
+                </li>
+            </ul>
+        </div>
     </nav>
 </template>
 
@@ -74,12 +75,15 @@ export default {
 
 <style scoped lang="scss">
 nav {
-    width:70%;
-    margin:0 auto;
     padding: 15px 0;
     display:flex;
     justify-content: space-between;
     align-items: center;
+
+    .wrap {
+        width:70%;
+        margin:0 auto;
+    }
     
 }
 ul {
@@ -93,7 +97,7 @@ ul {
             text-decoration: none;
             text-transform: uppercase;
             padding: 10px;
-            color: black; 
+            color: #303030; 
         }
         .active{
             color: #0E7CEC;
