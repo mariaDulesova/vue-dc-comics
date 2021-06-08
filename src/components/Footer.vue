@@ -77,15 +77,15 @@ export default {
 
 <style lang="scss" scoped>
 
-@import "../style/variables.scss";
+    @import "../style/variables.scss";
+    @import "../style/mixins.scss";
 
     section {
         position:relative;
         background-image: url('../assets/images/footer-bg.jpg');
 
         .wrap {
-            width:70%;
-            margin:0 auto;
+          @include wrap;
         }
     }
     

@@ -85,51 +85,50 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../style/variables.scss";
-nav {
-    padding: 15px 0;
-    
-    .wrap {
-        width:70%;
-        margin:0 auto;
-        display:flex;
-        justify-content: space-between;
+    @import "../style/variables.scss";
+    @import "../style/mixins.scss";
+
+    nav {
+        padding: 15px 0;
+        
+        .wrap {
+            @include wrap;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+    }
+    ul {
+        display: flex;
+        justify-content: flex-end;
         align-items: center;
-    }
-    
-}
-ul {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    list-style: none;
+        list-style: none;
 
-    li{
-        a {
-            text-decoration: none;
-            text-transform: uppercase;
-            padding: 55px 10px;
-            color: $primary-dark-gray; 
-    
-        }
-        .active{
-            color: $primary-blue;
-            position: relative;
-
-            &::before{
-                content : "";
-                position: absolute;
-                left: 50%;
-                bottom: 0;
-                width: 50%; 
-                border-bottom: 4px solid $primary-blue;
-                transform: translateX(-50%);
+        li {
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                padding: 55px 10px;
+                color: $primary-dark-gray; 
+        
             }
-            
-           
+            .active{
+                color: $primary-blue;
+                position: relative;
+
+                &::before{
+                    content : "";
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    width: 50%; 
+                    border-bottom: 4px solid $primary-blue;
+                    transform: translateX(-50%);
+                }
+            }
         }
     }
-}
 
 
 </style>

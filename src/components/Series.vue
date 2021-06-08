@@ -1,17 +1,17 @@
 <template>
-<div>
-    <img :src="film.thumb" :alt="film.series">  
-    <p> {{ film.series }}</p>
-</div>
+    <div>
+        <img :src="film.thumb" :alt="film.series">  
+        <p> {{ film.series }}</p>
+    </div>
        
 </template>
 
 <script>
-export default {
-    name: 'Series',
-    props: ['film']
+    export default {
+        name: 'Series',
+        props: ['film']
 
-}
+    }
 </script>
 
 <style lang='scss' scoped>
@@ -23,12 +23,12 @@ export default {
         padding: 0 10px;
 
         img {
-            object-fit: cover;
             width:100%;
             height:130px;
+            object-fit: cover;
+            object-position: 0 0;
             margin-top: 20px;
-            text-align: center;
-            
+            text-align: center;   
         }
 
         p {
