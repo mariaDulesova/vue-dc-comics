@@ -1,5 +1,8 @@
 <template>
     <section> 
+        <div class="section-services">
+            <Bonus/>
+        </div>
         <div class="section-links wrap">
             <div class= "links">
                 <div class="left">
@@ -70,8 +73,12 @@
 </template>
 
 <script>
+import Bonus from "./Bonus"
 export default {
-    name: 'Footer'
+    name: "Footer",
+    components: {
+        Bonus
+    }
 }
 </script>
 
@@ -82,93 +89,97 @@ export default {
 
     section {
         position:relative;
-        background-image: url('../assets/images/footer-bg.jpg');
+        background-image: url("../assets/images/footer-bg.jpg");
 
         .wrap {
           @include wrap;
         }
-    }
-    
-    .section-links { 
-        display:flex;
-        justify-content:space-between;
-        align-items: center;
 
-        .links {
-            display:flex;
-            justify-content: space-between;
-            .left,
-            .middle,
-            .right {
-                margin-right: 20px;
+         .section-links { 
+            @include flex-align-center;
+            justify-content:space-between;
 
-                h3 {
-                    color:white;
-                    text-transform:uppercase;
-                }
+            .links {
+                display:flex;
+                justify-content: space-between;
+                .left,
+                .middle,
+                .right {
+                    margin-right: 20px;
 
-                ul {
-                    list-style: none;
-                    padding-bottom: 20px;
+                    h3 {
+                        color:$primary-white;
+                        text-transform:uppercase;
+                    }
 
-                    li {
-                        a {
-                            color:rgb(175, 175, 175);
-                            text-decoration:none;
-                            font-size: 0.8rem;
-                        } 
+                    ul {
+                        list-style: none;
+                        padding-bottom: 20px;
+
+                        li {
+                            a {
+                                color:rgb(175, 175, 175);
+                                text-decoration:none;
+                                font-size: 0.8rem;
+                            } 
+                        }
                     }
                 }
             }
-        }
 
-        img {
-            width: 500px;
-        }
-    }
-    
-    .section-sign {
-        position:absolute;
-        left:0;
-        bottom:0;
-        width: 100%;
-        background-color: $primary-dark-gray;
-        padding: 15px 0;
-
-        .bottom-links{
-            display:flex;
-            justify-content: space-between;
-            align-items:center;
-
-            .button {
-            
-                a {
-                    padding: 10px;
-                    border: 2px solid $primary-blue;
-                    color: white;
-                    text-decoration:none;
-                    text-transform: uppercase;
-                }
-            }
-
-            .socials{
-                display:flex;
-                align-items: center;
-            
-                img,h3{
-                    padding: 10px;
-                }
-
-                h3 {
-                    text-transform: uppercase;
-                    color: $primary-blue;
-                }
-
+            img {
+                width: 500px;
             }
         }
+        
+        .section-sign {
+            position:absolute;
+            left:0;
+            bottom:0;
+            width: 100%;
+            background-color: $primary-dark-gray;
+            padding: 15px 0;
+
+            .bottom-links{
+                @include flex-align-center;
+                justify-content: space-between;
+
+                .button {
+                
+                    a {
+                        padding: 10px;
+                        border: 2px solid $primary-blue;
+                        color: $primary-white;
+                        text-decoration:none;
+                        text-transform: uppercase;
+                    }
+                }
+
+                .socials{
+                    @include flex-align-center;
+                
+                    img,h3{
+                        padding: 10px;
+                    }
+
+                    h3 {
+                        text-transform: uppercase;
+                        color: $primary-blue;
+                    }
+
+                }
+            }
+        }
+
+        .section-services {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: $primary-blue;
+
+
+        }
     }
-
-    
-
 
 </style>

@@ -8,9 +8,9 @@
         <div class="content">
             <div class="wrap">
                 <Series
-                    v-for = '(serie, index) in series'
-                    :key = 'index'
-                    :film = 'serie'
+                    v-for = "(serie, index) in series"
+                    :key = "index"
+                    :film = "serie"
                 />   
             </div>
             <div class = "button">
@@ -24,14 +24,13 @@
 
 <script>
 
-    import Series from '../components/Series';
+    import Series from "./Series";
 
     export default {
-        name:'Content',
+        name:"Content",
         components: {
             Series,
         },
-
         data: function() {
             return {
                 series: 
@@ -120,7 +119,7 @@
 
     .jambotron { 
         height: 400px;
-        background-image: url('../assets/images/jumbotron.jpg');
+        background-image: url("../assets/images/jumbotron.jpg");
         background-position: center top;
         background-size: 100%;
         position: relative;
@@ -138,7 +137,7 @@
                 background-color: $primary-blue;
                 text-transform: uppercase;
                 text-decoration: none;
-                color:white;
+                color:$primary-white;
                 z-index: 999;
             }
         }    
@@ -161,10 +160,11 @@
 
             a {
                 padding: 5px 40px;
+                background-color: $primary-blue;
                 text-decoration: none;
                 text-transform: uppercase;
-                background-color: $primary-blue;
-                color: white;
+                font-size: 0.8rem;
+                color: $primary-white;;
             }
         }
     }

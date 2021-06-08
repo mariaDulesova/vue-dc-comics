@@ -16,7 +16,7 @@
 
 <script>
 export default {
-    name: 'Header',
+    name: "Header",
     data:function() {
         return {
             links: [
@@ -85,6 +85,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
     @import "../style/variables.scss";
     @import "../style/mixins.scss";
 
@@ -93,16 +94,14 @@ export default {
         
         .wrap {
             @include wrap;
-            display:flex;
+            @include flex-align-center;
             justify-content: space-between;
-            align-items: center;
         }
         
     }
     ul {
-        display: flex;
+        @include flex-align-center;
         justify-content: flex-end;
-        align-items: center;
         list-style: none;
 
         li {

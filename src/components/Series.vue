@@ -8,13 +8,13 @@
 
 <script>
     export default {
-        name: 'Series',
-        props: ['film']
+        name: "Series",
+        props: ["film"]
 
     }
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
     @import "../style/variables.scss";
 
 
@@ -33,7 +33,7 @@
 
         p {
             text-align: center;
-            color: white;
+            color: $primary-white;
             font-weight: 300;
         }
     }
